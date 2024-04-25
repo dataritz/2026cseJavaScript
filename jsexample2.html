@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="Enter any number" id="t1">
+  <button onclick="display()">Display</button>
+  <p id="p1"></p>
+  <script>
+    function display(){
+        let val = document.getElementById('t1').value;
+
+        let ans = '';
+        for(i=1;i<=10;i++){
+          ans = ans + (val + " X " + i + " = " + val*i + `<br>`);
+        }
+        document.getElementById('p1').innerHTML = ans;
+    }
+  </script>
+</body>
+</html>

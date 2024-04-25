@@ -1,0 +1,19 @@
+.prop1{
+  color: red; 
+  border: 5px double blue; border-radius: 20px; 
+  padding: 10px;
+}
+#bg{
+  background-color:#0A5EBC;
+}
+
+li{
+  list-style: none;
+  float:inline-end;
+  padding: 10px;
+  background-color: aqua;
+}
+
+li:hover{
+  background-color: cadetblue;
+}
