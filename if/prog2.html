@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>WAP to find Largest number amoung three numbers</p>
+  <input type="text" placeholder="Enter first number" id="t1">
+  <input type="text" placeholder="Enter Second number" id="t2">
+  <input type="text" placeholder="Enter Third number" id="t3">
+  <button onclick="check()">Check</button>
+  <h3 id="ans">Answer = > </h3>
+  <script>
+    function check(){
+      let n1 = Number(document.getElementById('t1').value);
+      let n2 = Number(document.getElementById('t2').value);
+      let n3 = Number(document.getElementById('t3').value);
+      if(n1>n2 && n1>n3)
+         document.getElementById("t1").setAttribute('style','background-color:green;color:red;');
+      else if(n2>n3)
+        document.getElementById("t2").setAttribute('style','background-color:green;color:red;');
+      else
+        document.getElementById("t3").setAttribute('style','background-color:green;color:red;');
+    }
+  </script>
+</body>
+</html>
