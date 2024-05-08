@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="number" id="t1" placeholder="Enter any number">
+  <input type="number" id="t2" placeholder="Enter any number">
+  <button onmouseover="add()">Add</button>
+  <button onmouseover="sub()">Sub</button>
+  <button onmouseover="mul()">Mul</button>
+  <button onclick="addnvalue(1,2,3,4,5)">AddNvalue</button>
+  <script>
+    
+    function add(){
+      let a = document.getElementById("t1").value;
+      let b = document.getElementById("t2").value;
+      alert(a+b);
+    }
+
+    const sub = function(){
+      let a = document.getElementById("t1").value;
+      let b = document.getElementById("t2").value;
+      alert(a-b);
+    }
+    const mul = ()=>{
+      let a = document.getElementById("t1").value;
+      let b = document.getElementById("t2").value;
+      alert(a*b);
+    }
+
+    function addnvalue(...n){
+      let sum=0;
+      for(i=0;i<n.length;i++){
+          sum=sum+n[i];
+      }
+      alert(sum);
+    }
+  </script>
+</body>
+</html>
