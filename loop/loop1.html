@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Print Table of n on to console</p>
+  <input type="text" id="t1">
+  <button onclick="table()">Display Table onto console</button>
+  <script>
+    function table(){
+      let n = document.getElementById("t1").value;
+      for(i=1;i<=10;i++){
+        console.log(`${n} X ${i} = ${n*i}`);
+      }
+    }
+  </script>
+</body>
+</html>

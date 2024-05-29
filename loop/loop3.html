@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>WAP to print reverse of digit of a given number  </p>
+  <input type="text" id="t1">
+  <button onclick="reverse()">Display reverse of digit</button>
+  <script>
+    function reverse(){
+      let n = document.getElementById("t1").value;
+      let rev=0;
+      while(n!=0){
+        d=n%10;
+        n=parseInt(n/10);
+        rev = (rev*10)+d;
+      }
+      alert(rev);
+    }
+  </script>
+</body>
+</html>

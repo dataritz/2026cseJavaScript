@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>WAP to print sum and multiplicationof digit of a given number  </p>
+  <input type="text" id="t1">
+  <button onclick="sumofdigit()">Display sum of digit</button>
+  <button onclick="mulofdigit()">Display multiplication of digit</button>
+  <script>
+    function sumofdigit(){
+      let n = document.getElementById("t1").value;
+      let sum=0;
+      while(n!=0){
+        d=n%10;
+        n=parseInt(n/10);
+        sum=sum+d;
+      }
+      alert(sum);
+    }
+
+    function mulofdigit(){
+      let n = document.getElementById("t1").value;
+      let mul=1;
+      while(n!=0){
+        d=n%10;
+        n=parseInt(n/10);
+        mul=mul*d;
+      }
+      alert(mul);
+    }
+  </script>
+</body>
+</html>
