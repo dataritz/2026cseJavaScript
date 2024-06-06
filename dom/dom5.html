@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button name="b1" onclick="removeButton()">b1</button>
+  <button name="b2" onclick="removeButton()">b2</button>
+  <button onclick="removeButton()">b3</button>
+  <button onclick="removeButton()">b4</button>
+
+  <script>
+    function removeButton(){
+      event.target.setAttribute('disabled','true')
+    }
+  </script>
+</body>
+</html>

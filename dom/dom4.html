@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="t1" placeholder="Enteryour task" value="">
+  <button onclick="add()">Add</button>
+  <div id="d1">
+
+  </div>
+  <script>
+    function add(){
+      let msg = document.querySelector('#t1').value;
+      let para = document.createElement('p');
+      para.innerHTML = msg;
+      let parent = document.querySelector('#d1');
+      parent.appendChild(para);
+      document.querySelector('#t1').value=""
+    }
+  </script>
+</body>
+</html>

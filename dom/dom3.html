@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="add()">Click to add</button>
+  <div id="d1">
+
+  </div>
+  <script>
+    function add(){
+      let p = document.createElement('p');
+      p.innerHTML = 'Para1'
+      p.setAttribute('style','border:2px solid red')
+      document.getElementById('d1').appendChild(p);
+    }
+  </script>
+</body>
+</html>
