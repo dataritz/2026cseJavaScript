@@ -6,6 +6,7 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -24,6 +25,10 @@
     <div class="row mt-3" id="d1">
 
     </div>
+    <div id="d2"></div>
+  </div>
+  <div id="modal">
+
   </div>
  <script>
  function fetchAddSelect(){
@@ -56,10 +61,11 @@
       items.map((item)=>{
         let newstr =  `
         <div class="col">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 22rem;">
           <img src=${item.strMealThumb} class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${item.strMeal}</h5>
+            <button class="btn btn-primary" onclick="More(${item.idMeal})">More</button>
             </div>
         </div>
          </div>
@@ -68,6 +74,48 @@
       })
       document.querySelector('#d1').innerHTML = str;
     })
+  }
+
+  function More(id){
+    const uri = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+    const promise  = fetch(uri);
+    promise.then((response)=>{
+        return response.json();
+    })
+    .then((data)=>{
+      let items = data.meals[0];
+      strIngredient = '';
+      for(i=1;i<=20;i++){
+        if(items[`strIngredient${i}`].length >0)
+        strIngredient += items[`strIngredient${i}`] + ', ';
+       }
+      let inst = items.strInstructions.replaceAll('\n','<br>')
+      let info = `
+        <div class="modal" tabindex="-1" id='myModal'>
+        <div class="modal-dialog modal-fullscreen-xxl-down">
+          <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">${items.strMeal} :- ${items.strCategory}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>${inst}</p>
+        <p> <b>Ingredient - ${strIngredient}</b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+      `
+  document.querySelector('#modal').innerHTML = info;
+  var myModal = new bootstrap.Modal(document.getElementById('myModal'), {
+  keyboard: false
+})
+myModal.show();
+    })
+
   }
  </script>
 </body>
